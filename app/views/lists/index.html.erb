@@ -1,0 +1,19 @@
+<h1>Movie lists home</h1>
+
+<div class="container">
+  <div class="">
+    <h3>My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="card-category">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

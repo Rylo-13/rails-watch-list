@@ -1,0 +1,10 @@
+<h1><%= @list.name %></h1>
+<% @list.movies.each do |movie| %>
+  <%= movie.title %>
+<% end %>
+
+<%= link_to "Go back to movies lists!", lists_path %>
+<%= link_to "Delete",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
